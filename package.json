@@ -1,0 +1,19 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "Simple Todo API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/MrGeminus/todo-api.git)"
+  },
+  "author": "MrGeminus",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}
