@@ -1,19 +1,73 @@
 {
-  "name": "todo-api",
-  "version": "1.0.0",
-  "description": "Simple Todo API",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+  "version": "2.0.0",
+  "author": {
+    "name": "MrGeminus",
+    "email": "contact@mrgeminus.com",
+    "url": "http://mrgeminus.com/"
   },
+  "name": "todo-app-api",
+  "description": "A simple API for the solution for the Todo App challenge on Frontend Mentor.",
+  "keywords": [
+    "Node",
+    "Express",
+    "TypeScript",
+    "ESLint",
+    "Jest",
+    "MongoDB",
+    "Mongoose",
+    "jwt",
+    "bcrypt",
+    "dotenv",
+    "nodemon",
+    "ts-node",
+    "Backend",
+    "API"
+  ],
   "repository": {
     "type": "git",
-    "url": "(https://github.com/MrGeminus/todo-api.git)"
+    "url": "git+https://github.com/MrGeminus/todo-app-api.git"
   },
-  "author": "MrGeminus",
+  "homepage": "https://github.com/MrGeminus/todo-app-api#readme",
+  "bugs": {
+    "url": "https://github.com/MrGeminus/todo-app-api/issues",
+    "email": "support@mrgeminus.com"
+  },
   "license": "MIT",
+  "funding": [
+    {
+      "type": "Buy Me A Coffee",
+      "url": "https://www.buymeacoffee.com/mrgeminus"
+    },
+    {
+      "type": "Subscribe Star",
+      "url": "https://www.subscribestar.com/mrgeminus"
+    }
+  ],
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "build": "tsc -p .",
+    "dev": "nodemon ./src/server.ts"
+  },
   "dependencies": {
-    "json-server": "^0.16.3"
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.8.0",
+    "zod": "^3.20.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.15",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/node": "^18.11.17",
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
   }
 }
