@@ -11,10 +11,6 @@ import errorHandler from "./middleware/error.middleware"
 
 dotenv.config()
 
-console.log('env')
-
-dbconnect()
-
 // Create express app
 
 const app: Application = express();
@@ -28,9 +24,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Start listening for requests on the specified port
-mongoose.connection.once('open', () => {
+dbconnect().then(() => {
     app.listen(process.env.PORT, () => {
-        console.log('App running on' + process.env.PORT)
+
         // Register available routes
 
         app.use(router);
