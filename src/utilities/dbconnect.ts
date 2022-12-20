@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 export const dbconnect = async () => {
     mongoose.set('strictQuery', false)
     try {
-        await mongoose.connect(process.env.DB_URI!)
+        await mongoose.connect(`${process.env.DB_URI}`)
+        console.log('Connected')
     }
     catch (error) {
         console.log(error)

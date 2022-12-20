@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }))
 // Start listening for requests on the specified port
 mongoose.connection.once('open', () => {
     app.listen(process.env.PORT, async () => {
-
+        console.log('App running on' + process.env.PORT)
         // Register available routes
 
         app.use(router);
