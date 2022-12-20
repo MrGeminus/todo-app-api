@@ -1,4 +1,5 @@
 import express, { Application } from "express";
+import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -9,6 +10,8 @@ import logger from "./middleware/logger.middleware"
 import errorHandler from "./middleware/error.middleware"
 
 dotenv.config()
+
+dbconnect()
 
 // Create express app
 
@@ -23,16 +26,14 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Start listening for requests on the specified port
+mongoose.connection.once('open', () => {
+    app.listen(process.env.PORT, async () => {
 
-app.listen(process.env.PORT, async () => {
-    // Wait for the connection to the database to be established
+        // Register available routes
 
-    await dbconnect();
+        app.use(router);
 
-    // Register available routes
-
-    app.use(router);
-
-    app.use(errorHandler);
-});
+        app.use(errorHandler);
+    })
+})
 
