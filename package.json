@@ -43,6 +43,9 @@
       "url": "https://www.subscribestar.com/mrgeminus"
     }
   ],
+  "engines": {
+		"node": "18.12.1"
+	},
   "scripts": {
     "start": "node dist/server.js",
     "build": "tsc",
